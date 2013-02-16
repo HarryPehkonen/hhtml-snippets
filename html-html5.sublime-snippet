@@ -1,0 +1,23 @@
+<snippet>
+    <content><![CDATA[
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>${1}</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./scripts.js"></script>
+    <script src=".//html5.js"></script>
+</head>
+<body>
+    ${4}
+</body>
+</html>
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>html</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>text.html</scope>
+</snippet>
