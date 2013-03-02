@@ -6,10 +6,10 @@
     <meta charset="utf-8">
     <title>${1}</title>
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="">${2:
+    <script src="./html5shiv.js"></script>}
     <link rel="stylesheet" href="./styles.css">
     <script src="./scripts.js"></script>
-    <script src=".//html5.js"></script>
 </head>
 <body>
     ${4}
@@ -17,7 +17,7 @@
 </html>
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-    <tabTrigger>html</tabTrigger>
+    <tabTrigger>html5</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <scope>text.html</scope>
 </snippet>
