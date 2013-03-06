@@ -1,14 +1,8 @@
 <snippet>
-    <content><![CDATA[
-<label>$1
-    <select name="${1}"${2: multiple="yes"}>
-        
-        <option value="${3}">${3}</option>
-        $4
-    </select>
-</label>
-$0
-]]></content>
+    <content><![CDATA[<label>$1</label>
+<select name="${1}"${2: multiple="yes"}>
+    <option value="${3}">${3}</option>
+</select>]]></content>
     <tabTrigger>drop</tabTrigger>
     <scope>text.html</scope>
 </snippet>

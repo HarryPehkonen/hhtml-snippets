@@ -1,14 +1,20 @@
 <snippet>
     <content><![CDATA[
-<table>
+<table id="$1" class="${2:sortable}">
+    <caption>$3</caption>
     <thead>
         <tr>
-            <th>${1}</th>
+            <th>$4</th>
         </tr>
-    </thead>
+    </thead>${5:
+    <tfoot>
+        <tr>
+            <th>$6</th>
+        </tr>
+    </tfoot>}
     <tbody>
         <tr>
-            <td></td>
+            <td>$7</td>
         </tr>
     </tbody>
 </table>
