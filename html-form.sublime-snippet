@@ -1,7 +1,10 @@
 <snippet>
     <content><![CDATA[
-<form name="${1}" action="${2}" method="${3:GET}">
-    $4
+<form name="${1}" action="${2}" method="${3:GET}" accept-charset="UTF-8">
+    <fieldset>
+    	<legend>$4</legend>
+    		$5
+    </fieldset>
 </form>]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
     <tabTrigger>form</tabTrigger>
