@@ -1,0 +1,58 @@
+<snippet>
+    <content><![CDATA[
+import os
+import logging
+import json
+import pprint
+
+import pdl_wrapper
+
+import tornado.httpserver
+import tornado.ioloop
+import tornado.options
+import tornado.web
+import tornado.autoreload
+
+from tornado.options import options
+
+logging.basicConfig(
+    format = '%(asctime)s\t%(message)s',
+    datefmt = '%Y-%m-%d %H:%M:%S',
+    level = logging.DEBUG
+)
+
+logging.debug("Starting!")
+
+tornado.options.define("port", default=8000, help="Run on the given port", type=int)
+tornado.options.define("autoreload", default="yes", help="autoreload")
+
+class IndexHandler(tornado.web.RequestHandler):
+    def get(self, *args):
+        self.render('index.html')
+
+if __name__ == '__main__':
+    tornado.options.parse_command_line()
+    app = tornado.web.Application(
+        handlers = [
+            (r'/$1(.*)', IndexHandler),
+        ],
+        static_path = os.path.join(os.path.dirname(__file__), 'static'),
+        static_url_prefix = '/$1/static/',
+        template_path = os.path.join(os.path.dirname(__file__), "templates"),
+    )
+
+    http_server = tornado.httpserver.HTTPServer(app)
+    http_server.listen(options.port)
+    ioloop = tornado.ioloop.IOLoop.instance()
+    if tornado.options.options.autoreload.lower() == "yes":
+        for monitordir in ('templates', 'static'):
+            for (path, dirs, files) in os.walk(os.path.join(os.getcwd(), monitordir)):
+                for item in files:
+                    tornado.autoreload.watch(os.path.join(path, item))
+        tornado.autoreload.start(ioloop)
+
+    ioloop.start()
+]]></content>
+    <tabTrigger>tornadoweb</tabTrigger>
+    <scope>source.python</scope>
+</snippet>
